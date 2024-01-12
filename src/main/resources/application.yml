@@ -1,0 +1,23 @@
+server:
+
+  port: 8164
+
+  servlet:
+    context-path: /api
+
+spring:
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/item?useUnicode=true&characterEncoding=UTF8
+    username: postgres
+    password: postgres
+
+  liquibase:
+    change-log: liquibase/master.xml
+    enabled: true
+
+sluggish-api:
+  url: http://localhost:8081
+  reactorClientTimeOut: 2000
+  writeTimeOut: 2500
+  readTimeOut: 30000
